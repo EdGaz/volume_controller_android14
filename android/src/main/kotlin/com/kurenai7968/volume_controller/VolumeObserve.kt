@@ -61,7 +61,7 @@ class VolumeListener(private val context: Context): EventChannel.StreamHandler {
 
     private fun registerReceiver() {
         val filter = IntentFilter(VOLUME_CHANGED_ACTION)
-        context.registerReceiver(volumeBroadcastReceiver, filter, ContextCompat.RECEIVER_EXPORTED)
+        ContextCompat.registerReceiver(context,volumeBroadcastReceiver, filter, ContextCompat.RECEIVER_EXPORTED)
     }
 
     private fun volume():Double {
