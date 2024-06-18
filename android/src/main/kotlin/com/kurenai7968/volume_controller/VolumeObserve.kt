@@ -3,7 +3,7 @@ package com.kurenai7968.volume_controller
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Context.AUDIO_SERVICE
-import android.support.v4.content.ContextCompat
+import androidx.core.content.ContextCompat
 import android.content.Intent
 import android.content.IntentFilter
 import android.media.AudioManager
