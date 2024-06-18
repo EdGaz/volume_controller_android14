@@ -3,12 +3,14 @@ package com.kurenai7968.volume_controller
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Context.AUDIO_SERVICE
+import android.support.v4.content.ContextCompat
 import android.content.Intent
 import android.content.IntentFilter
 import android.media.AudioManager
 import android.media.AudioManager.FLAG_SHOW_UI
 import io.flutter.plugin.common.EventChannel
 import kotlin.math.round
+
 
 
 class VolumeObserver(private val context:Context){
@@ -59,7 +61,7 @@ class VolumeListener(private val context: Context): EventChannel.StreamHandler {
 
     private fun registerReceiver() {
         val filter = IntentFilter(VOLUME_CHANGED_ACTION)
-        context.registerReceiver(volumeBroadcastReceiver, filter, RECEIVER_EXPORTED)
+        context.registerReceiver(volumeBroadcastReceiver, filter, ContextCompat.RECEIVER_EXPORTED)
     }
 
     private fun volume():Double {
